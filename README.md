@@ -30,6 +30,7 @@ from the App Store.
 In Scriptable, tap **+** to create a new script and paste in the contents of:
 - [`metropulse-widget.js`](./metropulse-widget.js) → name it **MetroPulse**
 - [`find-codes.js`](./find-codes.js) → name it **MetroPulse Find Codes** (optional helper)
+- [`route-stops.js`](./route-stops.js) → name it **MetroPulse Route Stops** (optional helper: lists every StopID along a bus route, e.g. D30)
 
 The easiest way to get the files onto your phone: save this repo to iCloud
 Drive's *Scriptable* folder, or open the raw files on your phone and copy/paste.
@@ -89,6 +90,7 @@ This overrides the stations/stops in `CONFIG` for just that widget.
 | Bus predictions  | `NextBusService.svc/json/JPredictions?StopID={id}` |
 | Station lookup   | `Rail.svc/json/jStations` |
 | Bus stop lookup  | `Bus.svc/json/jStops?Lat&Lon&Radius` |
+| Route stop list  | `Bus.svc/json/jRouteDetails?RouteID={route}` |
 
 The API key is sent as an `api_key` request header (kept out of URLs/logs).
 iOS refreshes widgets on its own schedule; `refreshMinutes` nudges the timeline.
